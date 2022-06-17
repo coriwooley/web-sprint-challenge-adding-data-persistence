@@ -5,3 +5,4 @@ exports.seed = function(knex){
     {task_description: 'Finish Unit 1 projects', task_notes: 'You can do this', task_completed: 1,  project_id: 3}
   ])
 }
+

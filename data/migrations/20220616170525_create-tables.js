@@ -12,7 +12,7 @@ exports.up = function (knex) {
     })
     .createTable("resources", (tbl) => {
       tbl.increments("resource_id");
-      tbl.text("resource_name").notNullable().unique();
+      tbl.text("resource_name").unique().notNullable();
       tbl.text("resource_description");
     })
     .createTable("tasks", (tbl) => {

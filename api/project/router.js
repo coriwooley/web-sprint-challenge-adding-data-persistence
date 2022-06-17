@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Project = require("./model");
-const {checkProject} = require('./middleware')
+const { checkProject } = require("./middleware");
 
 router.get("/", async (req, res) => {
   const projects = await Project.find();
@@ -16,8 +16,13 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", checkProject, async (req, res) => {
-    const newProject = await Project.insert(req.body)
-    res.status(201).json({...newProject, project_completed: newProject.project_completed ? true : false})
+  const newProject = await Project.insert(req.body);
+  res
+    .status(201)
+    .json({
+      ...newProject,
+      project_completed: newProject.project_completed ? true : false,
+    });
 });
 
 module.exports = router;

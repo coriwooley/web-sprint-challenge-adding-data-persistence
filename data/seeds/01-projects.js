@@ -5,3 +5,4 @@ exports.seed = function (knex) {
     {project_name: 'Pass BloomTech', project_description: 'Become Web Developer so I can afford 100 cats and begin world domination'}
   ])
 }
+
